@@ -47,13 +47,14 @@ public class CadastroLivros extends AppCompatActivity {
             long id = dao.inserir(livro);
 
             Toast.makeText(this, "Livro inserido com id: " + id, Toast.LENGTH_SHORT).show();
+            finish();
         }else {
             livro.setTitulo(titulo.getText().toString());
             livro.setAutor(autor.getText().toString());
             livro.setCateg(categ.getText().toString());
             dao.alterar(livro);
             Toast.makeText(this, "Livro foi alterado", Toast.LENGTH_SHORT).show();
-
+            finish();
         }
     }
 }
